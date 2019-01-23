@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders the input 1`] = `
+<input
+  className="sc-bdVaJa fWKPEI"
+/>
+`;
+
+exports[`Input renders the input as password 1`] = `
+<input
+  className="sc-bdVaJa fWKPEI"
+  type="password"
+/>
+`;
+
+exports[`Input renders the input with width 1`] = `
+<input
+  className="sc-bdVaJa fWKPEI"
+/>
+`;

@@ -24,3 +24,9 @@ yarn-error.log*
 
 # docs
 .docz/
+
+# vim
+.swp
+.sw
+swo
+.session
