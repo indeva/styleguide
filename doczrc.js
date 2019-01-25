@@ -9,7 +9,22 @@ export default {
   themeConfig: {
     colors: {
       primary: '#f47d35',
-      link: '#2463d0'
-    }
-  }
-}
+      link: '#2463d0',
+    },
+  },
+  modifyBundlerConfig: (config) => {
+    config.resolve.extensions.push('.scss');
+    config.module.rules.push(
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    );
+
+    return config;
+  },
+};
