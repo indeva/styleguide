@@ -1,0 +1,58 @@
+---
+name: Button
+route: /button
+---
+
+import Button from '@vtex/styleguide/lib/Button'
+
+import { Playground, PropsTable } from 'docz';
+import 'indeva-tachyons'
+
+# Button Component
+
+This button is awesome.
+
+### Playground
+
+<Playground className="row colapse">
+    <div>
+  <div>
+    <span className="mr4">
+      <Button variation="primary">Primary</Button>
+    </span>
+    <span className="mr4">
+      <Button variation="secondary">Secondary</Button>
+    </span>
+    <span className="mr4">
+      <Button variation="tertiary">Tertiary</Button>
+    </span>
+    <span className="mr4">
+      <Button variation="danger">Danger</Button>
+    </span>
+    <span className="mr4">
+      <Button variation="danger-tertiary">Danger Tertiary</Button>
+    </span>
+  </div>
+  <div className="mt4">
+    <span className="mr4">
+      <Button variation="primary" disabled>Primary</Button>
+    </span>
+    <span className="mr4">
+      <Button variation="secondary" disabled>Secondary</Button>
+    </span>
+    <span className="mr4">
+      <Button variation="tertiary" disabled>Tertiary</Button>
+    </span>
+    <span className="mr4">
+      <Button variation="danger" disabled>Danger</Button>
+    </span>
+    <span className="mr4">
+      <Button variation="danger-tertiary" disabled>Danger Tertiary</Button>
+    </span>
+  </div>
+</div>
+</Playground>
+
+### Properties Table
+
+<PropsTable of={Button} />
