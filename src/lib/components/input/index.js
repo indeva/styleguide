@@ -1,19 +1,34 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import './input.scss';
 
-const StyledInput = styled.input`
-  border: 0;
-  border-bottom: 2px solid #BBC0CB;
-  height: 30px;
-  outline: none;
-  font-family: Rubik;
-  line-height: 21px;
-  font-size: 16px;
-  width: ${props => props.width || '100%'}
-  &:focus {
-    border-bottom: 2px solid #F6975D;
-  }
-`;
+const Input = ({
+  value, onChange, type, lined,
+}) => {
+  const className = classNames(
+    'input',
+    {
+      'input--lined': lined,
+    },
+  );
 
-export default ({ value, onChange, type }) =>
-  <StyledInput onChange={onChange} value={value} type={type} />;
+  return <input className={className} onChange={onChange} value={value} type={type} />;
+};
+
+Input.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  lined: PropTypes.bool,
+  type: PropTypes.oneOf([
+    'password',
+    'text',
+  ]),
+};
+
+Input.defaultProps = {
+  lined: false,
+  type: 'text',
+};
+
+export default Input;

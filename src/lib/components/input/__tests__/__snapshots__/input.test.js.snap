@@ -2,19 +2,27 @@
 
 exports[`Input renders the input 1`] = `
 <input
-  className="sc-bdVaJa fWKPEI"
+  className="input"
+  onChange={[Function]}
+  type="text"
+  value=""
 />
 `;
 
 exports[`Input renders the input as password 1`] = `
 <input
-  className="sc-bdVaJa fWKPEI"
+  className="input"
+  onChange={[Function]}
   type="password"
+  value=""
 />
 `;
 
-exports[`Input renders the input with width 1`] = `
+exports[`Input renders the lined input 1`] = `
 <input
-  className="sc-bdVaJa fWKPEI"
+  className="input input--lined"
+  onChange={[Function]}
+  type="text"
+  value=""
 />
 `;

@@ -1,0 +1,21 @@
+.input {
+  font-family: Rubik;
+  font-size: 16px;
+
+  &--lined {
+    border: 0;
+    border-bottom: 2px solid #BBC0CB;
+    height: 30px;
+    line-height: 21px;
+    outline: none;
+    width: 100%;
+    -webkit-transition : border 500ms ease-out;
+    -moz-transition : border 500ms ease-out;
+    -o-transition : border 500ms ease-out;
+    transition : border 500ms ease-out;
+
+    &:focus {
+      border-bottom: 2px solid #F6975D;
+    }
+  }
+}

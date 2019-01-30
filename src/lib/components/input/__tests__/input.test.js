@@ -4,19 +4,19 @@ import Input from '..';
 
 describe('Input', () => {
   it('renders the input', () => {
-    const component = renderer.create(<Input>Test</Input>);
+    const component = renderer.create(<Input value="" onChange={() => {}}>Test</Input>);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders the lined input', () => {
+    const component = renderer.create(<Input value="" onChange={() => {}} lined>Test</Input>);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders the input as password', () => {
-    const component = renderer.create(<Input type="password">Test</Input>);
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders the input with width', () => {
-    const component = renderer.create(<Input width="90%">Test</Input>);
+    const component = renderer.create(<Input value="" onChange={() => {}} type="password">Test</Input>);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
