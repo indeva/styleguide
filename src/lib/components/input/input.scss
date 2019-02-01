@@ -1,21 +1,65 @@
-.input {
-  font-family: Rubik;
-  font-size: 16px;
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  height: 50px;
 
-  &--lined {
-    border: 0;
-    border-bottom: 2px solid #BBC0CB;
-    height: 30px;
-    line-height: 21px;
-    outline: none;
-    width: 100%;
-    -webkit-transition : border 500ms ease-out;
-    -moz-transition : border 500ms ease-out;
-    -o-transition : border 500ms ease-out;
-    transition : border 500ms ease-out;
+  &.error {
+    color: #EA7670;
+    .form-control-placeholder {
+      color: #EA7670;
+    }
 
-    &:focus {
-      border-bottom: 2px solid #F6975D;
+    .input {
+      &--lined {
+        border-bottom: 2px solid #EA7670;
+      }
+    }
+  }
+
+  .error-message {
+    color: #EA7670;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 2px;
+  }
+
+  .form-control-placeholder {
+    position: absolute;
+    top: 0;
+    transition: all 200ms;
+    opacity: 0.5;
+  }
+
+  .input {
+    font-family: Rubik;
+    font-size: 16px;
+
+    &--lined {
+      border: 0;
+      border-bottom: 2px solid #BBC0CB;
+      height: 30px;
+      line-height: 21px;
+      outline: none;
+      width: 100%;
+      -webkit-transition : border 500ms ease-out;
+      -moz-transition : border 500ms ease-out;
+      -o-transition : border 500ms ease-out;
+      transition : border 500ms ease-out;
+
+      &:focus + .form-control-placeholder,
+      &:valid + .form-control-placeholder {
+        font-size: 75%;
+        transform: translate3d(0, -100%, 0);
+        opacity: 1;
+      }
+
+      &:focus + .form-control-placeholder {
+        color: #F6975D;
+      }
+
+      &:focus {
+        border-bottom: 2px solid #F6975D;
+      }
     }
   }
 }
