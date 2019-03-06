@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import Link from '..';
 
 describe('Link', () => {
@@ -24,6 +25,20 @@ describe('Link', () => {
       const component = renderer.create(<Link url="/test" className="my classes">my link</Link>);
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot();
+    });
+  });
+
+  describe('behavior tests', () => {
+    describe('when is clicked', () => {
+      it('calls the callback function', () => {
+        const onClickCallback = jest.fn();
+        const wrapper = mount(
+          <Link onClick={onClickCallback} url="/test" className="links">my link</Link>,
+        );
+
+        wrapper.find('.link').simulate('click');
+        expect(onClickCallback).toHaveBeenCalledTimes(1);
+      });
     });
   });
 

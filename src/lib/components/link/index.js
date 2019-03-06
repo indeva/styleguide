@@ -7,6 +7,7 @@ const Link = ({
   children,
   url,
   target,
+  onClick,
   className,
   primary,
   secondary,
@@ -33,6 +34,7 @@ const Link = ({
     <a
       href={url}
       target={target}
+      onClick={onClick}
       className={classes}
     >
       {children}
@@ -43,6 +45,7 @@ const Link = ({
 Link.defaultProps = {
   target: '_self',
   className: null,
+  onClick: null,
   primary: false,
   secondary: false,
   tertiary: false,
@@ -54,6 +57,7 @@ Link.defaultProps = {
 
 Link.propTypes = {
   children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
   url: PropTypes.string.isRequired,
   target: PropTypes.oneOf([
     '_blank',

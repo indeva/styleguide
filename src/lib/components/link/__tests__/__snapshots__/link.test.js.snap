@@ -4,6 +4,7 @@ exports[`Link with custom class should render link properly 1`] = `
 <a
   className="link my classes"
   href="/test"
+  onClick={null}
   target="_self"
 >
   my link
@@ -14,6 +15,7 @@ exports[`Link with modifier block should render link properly 1`] = `
 <a
   className="link link--block"
   href="/test"
+  onClick={null}
   target="_self"
 >
   Test
@@ -24,6 +26,7 @@ exports[`Link with modifier compose by primary and large and block should render
 <a
   className="link link--primary link--large link--block"
   href="/test"
+  onClick={null}
   target="_self"
 >
   Test
@@ -34,6 +37,7 @@ exports[`Link with modifier large should render link properly 1`] = `
 <a
   className="link link--large"
   href="/test"
+  onClick={null}
   target="_self"
 >
   Test
@@ -44,6 +48,7 @@ exports[`Link with modifier medium should render link properly 1`] = `
 <a
   className="link link--medium"
   href="/test"
+  onClick={null}
   target="_self"
 >
   Test
@@ -54,6 +59,7 @@ exports[`Link with modifier primary should render link properly 1`] = `
 <a
   className="link link--primary"
   href="/test"
+  onClick={null}
   target="_self"
 >
   Test
@@ -64,6 +70,7 @@ exports[`Link with modifier secondary should render link properly 1`] = `
 <a
   className="link link--secondary"
   href="/test"
+  onClick={null}
   target="_self"
 >
   Test
@@ -74,6 +81,7 @@ exports[`Link with modifier small should render link properly 1`] = `
 <a
   className="link link--small"
   href="/test"
+  onClick={null}
   target="_self"
 >
   Test
@@ -84,6 +92,7 @@ exports[`Link with modifier tertiary should render link properly 1`] = `
 <a
   className="link link--tertiary"
   href="/test"
+  onClick={null}
   target="_self"
 >
   Test
@@ -94,6 +103,7 @@ exports[`Link with target should render link properly 1`] = `
 <a
   className="link"
   href="/test"
+  onClick={null}
   target="_blank"
 >
   link
@@ -104,6 +114,7 @@ exports[`Link with url should render link properly 1`] = `
 <a
   className="link"
   href="/test"
+  onClick={null}
   target="_self"
 >
   link with href
