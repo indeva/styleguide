@@ -18,6 +18,7 @@ exports[`Topbar Settings should render without active modifier 1`] = `
     <a
       className="topbar-settings__link"
       href="https://indeva.com.br/"
+      onClick={[Function]}
     >
       <svg
         aria-hidden="true"
@@ -41,6 +42,7 @@ exports[`Topbar Settings should render without active modifier 1`] = `
     <a
       className="topbar-settings__link"
       href="https://indeva.com.br/beneficios/"
+      onClick={[Function]}
     >
       <svg
         aria-hidden="true"
@@ -83,6 +85,7 @@ exports[`Topbar Settings should renders properly 1`] = `
     <a
       className="topbar-settings__link"
       href="https://indeva.com.br/"
+      onClick={[Function]}
     >
       <svg
         aria-hidden="true"
@@ -106,6 +109,7 @@ exports[`Topbar Settings should renders properly 1`] = `
     <a
       className="topbar-settings__link"
       href="https://indeva.com.br/beneficios/"
+      onClick={[Function]}
     >
       <svg
         aria-hidden="true"

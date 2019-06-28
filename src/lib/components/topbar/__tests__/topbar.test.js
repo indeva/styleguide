@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Topbar from '..';
 
 describe('Topbar', () => {
@@ -20,6 +20,13 @@ describe('Topbar', () => {
     const component = renderer.create(<Topbar {...defaultProps} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('should call onSettingsOpen when opening settings', () => {
+    const onSettingsOpen = jest.fn();
+    const wrapper = shallow(<Topbar {...defaultProps} onSettingsOpen={onSettingsOpen} />);
+    wrapper.instance().toggleSettings();
+    expect(onSettingsOpen).toHaveBeenCalled();
   });
 
   describe('when there is children', () => {

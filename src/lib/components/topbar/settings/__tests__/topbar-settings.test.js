@@ -1,7 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Settings from '..';
+
+jest.useFakeTimers();
 
 describe('Topbar Settings', () => {
   const defaultProps = {
@@ -27,22 +29,25 @@ describe('Topbar Settings', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  describe('on lifecycle events', () => {
-    describe('on componentDidMount', () => {
-      it('should call document.addEventListener', () => {
-        const spy = jest.spyOn(document, 'addEventListener');
-        mount(<Settings {...defaultProps} />);
-        expect(spy).toHaveBeenCalledTimes(1);
-      });
-    });
+  it('should call onSettingsNavClick when clicking on nav links', () => {
+    const onSettingsNavClick = jest.fn();
+    const wrapper = shallow(<Settings {...defaultProps} onSettingsNavClick={onSettingsNavClick} />);
+    wrapper.find('.topbar-settings__link').first().simulate('click');
+    expect(onSettingsNavClick).toHaveBeenCalledWith({ title: 'Editar perfil', icon: ['far', 'pen'], url: 'https://indeva.com.br/' });
+  });
 
-    describe('on componentWillUnmount', () => {
-      it('should call document.removeEventListener', () => {
-        const spy = jest.spyOn(document, 'removeEventListener');
-        const wrapper = mount(<Settings {...defaultProps} />);
-        wrapper.unmount();
-        expect(spy).toHaveBeenCalledTimes(1);
-      });
-    });
+  it('should remove class --active when clicking outsite', () => {
+    const wrapper = mount(<Settings {...defaultProps} />);
+    expect(wrapper.exists('.topbar-settings--active')).toEqual(true);
+    wrapper.instance().handleClickOutside({ target: null });
+    expect(wrapper.update().exists('.topbar-settings--active')).toEqual(false);
+  });
+
+  it('should call toggleSettings when clicking outsite', () => {
+    const toggleSettings = jest.fn();
+    const wrapper = mount(<Settings {...defaultProps} toggleSettings={toggleSettings} />);
+    wrapper.instance().handleClickOutside({ target: null });
+    jest.runAllTimers();
+    expect(toggleSettings).toHaveBeenCalled();
   });
 });

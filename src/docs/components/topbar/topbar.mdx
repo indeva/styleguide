@@ -25,6 +25,8 @@ This is the Topbar component.
     ]}
     clickOnFilterButton={() => alert('Click on Filter Button')}
     onLogoClick={() => console.log('Toggle logo and triggered') }
+    onSettingsOpen={() => console.log('Opened settings')}
+    onSettingsNavClick={navData => console.log(navData)}
   >
     Cat Store
   </Topbar>
