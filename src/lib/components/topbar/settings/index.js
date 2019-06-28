@@ -63,15 +63,15 @@ class Settings extends Component {
 
         <nav className="topbar-settings__nav">
           {
-            links.map(({ url, icon, title }) => (
+            links.map(link => (
               <a
-                href={url}
+                href={link.url}
                 className="topbar-settings__link"
-                key={url}
-                onClick={this.handleNavClick({ url, icon, title })}
+                key={link.url}
+                onClick={this.handleNavClick(link)}
               >
-                <Icon icon={icon} />
-                { title }
+                <Icon icon={link.icon} />
+                { link.title }
               </a>
             ))
           }
