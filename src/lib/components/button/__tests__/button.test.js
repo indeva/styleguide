@@ -17,6 +17,19 @@ describe('Button', () => {
       expect(tree).toMatchSnapshot();
     });
 
+    describe('with ref', () => {
+      it('should populate ref', () => {
+        const node = {};
+        const ref = React.createRef();
+
+        renderer.create(<Button ref={ref}>Test</Button>, {
+          createNodeMock: () => node,
+        });
+
+        expect(ref.current).toBe(node);
+      });
+    });
+
     describe('with modifier', () => {
       describe('primary', () => {
         it('should render button properly', () => {

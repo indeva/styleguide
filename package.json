@@ -33,6 +33,7 @@
     "classnames": "^2.2.6",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
+    "hoist-non-react-statics": "^3.3.0",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "ramda": "^0.26.1",

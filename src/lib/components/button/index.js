@@ -2,9 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
+import withForwardedRef from '../withForwardedRef';
+
 import './button.scss';
 
 const Button = ({
+  forwardedRef,
   children,
   className,
   type,
@@ -31,17 +35,19 @@ const Button = ({
 
   return (
     <button
+      ref={forwardedRef}
       type={type}
       className={classes}
       disabled={disabled}
       onClick={onClick}
     >
-      { children }
+      {children}
     </button>
   );
 };
 
 Button.defaultProps = {
+  forwardedRef: undefined,
   type: 'button',
   className: null,
   primary: false,
@@ -55,6 +61,9 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
+  forwardedRef: PropTypes.shape({
+    current: PropTypes.any,
+  }),
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
@@ -68,4 +77,4 @@ Button.propTypes = {
   onClick: PropTypes.func,
 };
 
-export default Button;
+export default withForwardedRef(Button);
