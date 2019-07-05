@@ -39,6 +39,7 @@
     "ramda": "^0.26.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-scripts": "2.1.3",
     "react-use-media-query-hook": "0.0.1"
   },
   "devDependencies": {
@@ -58,7 +59,6 @@
     "stylelint-order": "^2.0.0",
     "stylelint-scss": "^3.4.1",
     "stylelint-selector-bem-pattern": "^2.0.0",
-    "tetris-grid": "^1.1.4",
-    "react-scripts": "2.1.3"
+    "tetris-grid": "^1.1.4"
   }
 }
