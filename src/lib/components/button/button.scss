@@ -24,6 +24,7 @@
   padding: $space-8 $space-16;
   text-align: center;
   transition: all $transition-time;
+  background: red !important;
 
   > svg {
     margin-right: $space-8;
