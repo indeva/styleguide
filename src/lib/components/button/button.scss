@@ -15,15 +15,22 @@
 }
 
 .button {
+  // TODO: arrumar line-height no branch de tipografia
   @include small-text;
 
   border: 1px solid transparent;
-  border-radius: 6px;
+  border-radius: 3px;
   cursor: pointer;
-  outline: 0;
+  line-height: 1.3;
+  outline-color: $brand-lighten-2;
   padding: $space-8 $space-16;
   text-align: center;
   transition: all $transition-time;
+  transition-property: color, background-color, border-color;
+
+  &:disabled {
+    @include disabled;
+  }
 
   > svg {
     margin-right: $space-8;
@@ -35,13 +42,13 @@
     color: $white;
 
     &:hover {
-      background-color: $action-lighten-1;
-      border-color: $action-lighten-1;
+      background-color: $action-darken-1;
+      border-color: $action-darken-1;
     }
 
     &:active {
-      background-color: $action-darken-1;
-      border-color: $action-darken-1;
+      background-color: $action-darken-2;
+      border-color: $action-darken-2;
     }
 
     &:disabled {
@@ -55,17 +62,15 @@
     color: $neutral;
 
     &:hover {
-      border-color: $action-lighten-1;
+      background-color: $action-lighten-6;
+      border-color: $action-lighten-2;
       color: $action;
     }
 
     &:active {
-      border-color: $action-darken-1;
+      background-color: $action-lighten-5;
+      border-color: $action-lighten-2;
       color: $action-darken-1;
-    }
-
-    &:disabled {
-      @include disabled;
     }
   }
 
@@ -73,7 +78,7 @@
     color: $neutral;
 
     &:hover {
-      color: $action;
+      color: $action-lighten-1;
     }
 
     &:active {
@@ -86,12 +91,14 @@
   }
 
   &--medium {
+    // TODO: arrumar line-height no branch de tipografia
     @include body;
 
     padding: $space-12 $space-24;
   }
 
   &--large {
+    // TODO: arrumar line-height no branch de tipografia
     @include heading-2;
 
     padding: $space-12 $space-32;
